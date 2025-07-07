@@ -17,7 +17,7 @@ A classic top-down tile-based 2D adventure game built using **Java Swing**. Navi
 - 🗺️ Map rendering based on camera/player position
 - 🧠 Procedural terrain generation using Perlin noise (Python)
 - 🧱 Walls automatically placed on borders for structure
-- 📦 Ready for packaging as an executable `.jar`
+<!-- - 📦 Ready for packaging as an executable `.jar` -->
 
 ---
 
