@@ -137,4 +137,4 @@ resources/maps/map01.txt
 ## 👨‍💻 Author
 
 Developed by **Srijit**  
-Pirate, coder, and game dev enthusiast 🏴‍☠️
+Gamer, coder, and game dev enthusiast, Photographer
