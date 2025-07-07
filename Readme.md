@@ -1,9 +1,9 @@
 
 # 🏴‍☠️ Adventures of Pirate Srijit
 
-![Java]
-![Game Type]Top-Down RPG
-![Platform]Desktop
+Java
+Game Type: Top-Down RPG
+Platform: Desktop
 
 A classic top-down tile-based 2D adventure game built using **Java Swing**. Navigate through a procedurally generated world, explore diverse terrain, and avoid obstacles using real-time collision detection.
 
@@ -59,13 +59,11 @@ A classic top-down tile-based 2D adventure game built using **Java Swing**. Navi
 AdventureGame/
 ├── AdventureGame/             # Core game logic
 ├── entity/                    # Player + entity classes
-├── tile/                      # Tile & map manager
-├── resources/                 # All images and maps
-│   ├── maps/map01.txt
-│   ├── tiles/
-│   └── srijit/
-├── map_generator/             # Python script for generating map
-│   └── generate_map.py
+├── tile/                      # Tile & map manager                
+├── maps/                      # All images and maps
+├── tiles/
+└── srijit/            
+├── generate_map.py            # Python script for generating map
 ├── assets/                    # Screenshots or extra visuals
 │   └── screenshot.png
 └── README.md
@@ -77,7 +75,7 @@ AdventureGame/
 
 ### Requirements
 
-- Java 17 or higher
+- Java 8 or higher
 - Python 3.8+ (for map generator)
 - IDE (IntelliJ / VS Code) or terminal
 
@@ -87,7 +85,7 @@ AdventureGame/
 
 #### Option 1: Compile and Run from Terminal
 ```bash
-javac AdventureGame/*.java entity/*.java tile/*.java
+javac AdventureGame/*.java
 java AdventureGame.Main
 ```
 
