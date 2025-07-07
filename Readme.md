@@ -1,10 +1,9 @@
 
 # 🏴‍☠️ Adventures of Pirate Srijit
 
-![Java](https://img.shields.io/badge/Java-17%2B-red?logo=java)
-![Game Type](https://img.shields.io/badge/Top--Down-RPG-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Platform](https://img.shields.io/badge/Platform-Desktop-lightgrey)
+![Java]
+![Game Type]Top-Down RPG
+![Platform]Desktop
 
 A classic top-down tile-based 2D adventure game built using **Java Swing**. Navigate through a procedurally generated world, explore diverse terrain, and avoid obstacles using real-time collision detection.
 
