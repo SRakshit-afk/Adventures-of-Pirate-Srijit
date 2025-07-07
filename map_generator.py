@@ -1,5 +1,5 @@
 # Use perlin-like Noise simulation for generating maps and cluster similar tiles together for natural look
-
+#Remember: After generating the text file please choose the location of final chest and create a room with walls (Tile 1)
 # Tile Legend
 # 0 - Grass, 1 - Wall, 2 - Water, 3 - Dirt, 4 - Sand, 5 - Tree
 
@@ -24,27 +24,31 @@ def generate_map():
     map_array = np.zeros((height, width), dtype=int)
     for y in range(height):
         for x in range(width):
-            # Terrain base
-            t_val = (terrain_noise([x / scale, y / scale]) + 1) / 2
-            p_val = (path_noise([x / (scale/2), y / (scale/2)]) + 1) / 2  # smaller scale for path detail
-
-            # Terrain generation with increased forest frequency
-            if t_val < 0.25:
-                tile = 2  # Water
-            elif t_val < 0.35:
-                tile = 4  # Sand
-            elif t_val < 0.55:
-                tile = 0  # Grass
-            elif t_val < 0.80:
-                tile = 5  # Tree (more forest!)
-            elif t_val < 0.9:
-                tile = 0  # Patch of grass inside forests
+            # Border walls
+            if x == 0 or x == width - 1 or y == 0 or y == height - 1:
+                tile = 1  # Wall
             else:
-                tile = 1  # Wall / Mountain
+                # Terrain base
+                t_val = (terrain_noise([x / scale, y / scale]) + 1) / 2
+                p_val = (path_noise([x / (scale/2), y / (scale/2)]) + 1) / 2
 
-            # Add dirt paths inside forests or grasslands
-            if tile in [0, 5] and 0.45 < p_val < 0.52:
-                tile = 3  # Dirt path
+                # Terrain generation with increased forest frequency
+                if t_val < 0.25:
+                    tile = 2  # Water
+                elif t_val < 0.35:
+                    tile = 4  # Sand
+                elif t_val < 0.55:
+                    tile = 0  # Grass
+                elif t_val < 0.80:
+                    tile = 5  # Tree
+                elif t_val < 0.9:
+                    tile = 0  # Grass patch
+                else:
+                    tile = 1  # Wall / Mountain
+
+                # Add dirt paths inside forests or grasslands
+                if tile in [0, 5] and 0.45 < p_val < 0.52:
+                    tile = 3  # Dirt path
 
             map_array[y][x] = tile
     return map_array
