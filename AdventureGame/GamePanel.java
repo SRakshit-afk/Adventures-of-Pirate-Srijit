@@ -1,5 +1,6 @@
 package AdventureGame;
 
+import Objects.SuperObject;
 import entity.Player;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -33,7 +34,9 @@ public class GamePanel extends JPanel implements Runnable{
     KeyInput keyH = new KeyInput();
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
+    public AssetSetter aSetter = new AssetSetter(this);
     public Player srijit = new Player(this, keyH);
+    public SuperObject obj[] = new SuperObject[10];
 
 
     // Set FPS
@@ -45,6 +48,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+    }
+    
+    public void setupObjectGame(){
+        aSetter.setObject();
     }
 
     public void startGameThread(){
@@ -84,7 +91,15 @@ public class GamePanel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D) g;
 
+        //Tile
         tileM.draw(g2);
+
+        //Object
+        for(int i = 0; i < obj.length; i++){
+            if(obj[i] != null){
+                obj[i].draw(g2, this);
+            }
+        }
         srijit.draw(g2);
 
         g2.dispose();
