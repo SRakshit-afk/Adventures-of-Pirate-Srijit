@@ -1,140 +1,153 @@
+#  Adventures of Pirate Srijit
 
-# 🏴‍☠️ Adventures of Pirate Srijit
+**Adventures of Pirate Srijit** is a classic top-down 2D tile-based adventure game built from scratch in Java using Swing and AWT. You play as Pirate Srijit exploring islands, collecting keys, unlocking doors, and navigating the terrain — all while avoiding natural and tile-based obstacles.
 
-Java
-Game Type: Top-Down RPG
-Platform: Desktop
-
-A classic top-down tile-based 2D adventure game built using **Java Swing**. Navigate through a procedurally generated world, explore diverse terrain, and avoid obstacles using real-time collision detection.
+> 🎮 Made entirely with core Java, no external game engines!
 
 ---
 
-## 🌍 Features
+## Table of Contents
 
-- 🎮 Keyboard-controlled player movement (WASD)
-- 🧱 Tile-based terrain and collision system
-- 🎞️ Directional player sprite animations
-- 🗺️ Map rendering based on camera/player position
-- 🧠 Procedural terrain generation using Perlin noise (Python)
-- 🧱 Walls automatically placed on borders for structure
-<!-- - 📦 Ready for packaging as an executable `.jar` -->
-
----
-
-## 📸 Preview
-
-> *(Replace this with a real screenshot once you run the game)*
-
-![Preview](assets/screenshot.png)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Game Structure](#game-structure)
+- [Installation](#installation)
+- [Controls](#controls)
+- [Map Format & Python Tool](#map-format--python-tool)
+- [Planned Features](#planned-features)
+- [Credits](#credits)
+- [License](#license)
 
 ---
 
-## 🧩 Controls
+## Features
 
-| Key | Action    |
-|-----|-----------|
-| W   | Move Up   |
-| A   | Move Left |
-| S   | Move Down |
-| D   | Move Right |
-
----
-
-## 🗺 Tile Legend
-
-| Tile | Type      | Collision |
-|------|-----------|-----------|
-| 0    | Grass     | ❌        |
-| 1    | Wall      | ✅        |
-| 2    | Water     | ✅        |
-| 3    | Dirt Path | ❌        |
-| 4    | Sand      | ❌        |
-| 5    | Tree      | ✅        |
+- ✅ Smooth character movement with animated sprites
+- ✅ Tile-based world rendering with camera follow
+- ✅ Real-time collision detection with walls, water, and trees
+- ✅ Key-door system with chest collection
+- ✅ External map support (`map01.txt`)
+- ✅ Python-based map auto-generator
+- ✅ Modular structure for future expansions
 
 ---
 
-## 📁 Project Structure
+## Screenshots
+
+> Add gameplay GIF or screenshot here
+
+![Gameplay Screenshot](res/screenshots/sample.png)
+
+---
+
+## Game Structure
+
+### Project Layout
 
 ```
-AdventureGame/
-├── AdventureGame/             # Core game logic
-├── entity/                    # Player + entity classes
-├── tile/                      # Tile & map manager                
-├── maps/                      # All images and maps
-├── tiles/
-└── srijit/            
-├── generate_map.py            # Python script for generating map
-├── assets/                    # Screenshots or extra visuals
-│   └── screenshot.png
-└── README.md
+Adventures-of-Pirate-Srijit/
+│
+├── AdventureGame/         # Core game loop, main frame, input handling
+├── entity/                # Player and entity management
+├── tile/                  # Tile rendering and map loading
+├── Objects/               # Object classes: keys, chests, doors
+├── res/                   # Sprites, tile images, and map text file
+│   ├── maps/
+│   ├── tiles/
+│   ├── objects/
+│   └── srijit/
+├── map_generator.py       # Python tool to auto-generate map files
+├── README.md
+└── Main.java
 ```
 
 ---
 
-## 🚀 Getting Started
+## Installation
 
 ### Requirements
 
-- Java 8 or higher
-- Python 3.8+ (for map generator)
-- IDE (IntelliJ / VS Code) or terminal
+- Java JDK 17+
+- A Java-compatible IDE (IntelliJ, VS Code, Eclipse) or command line
 
----
+### Running the Game
 
-### 🎮 Run the Game (Java)
+#### Method 1: From IDE
 
-#### Option 1: Compile and Run from Terminal
+1. Open project in IntelliJ or VS Code.
+2. Ensure `res/` is in classpath (as a resource folder).
+3. Run `Main.java`.
+
+#### Method 2: From Terminal
+
 ```bash
+# Clone the repo
+git clone https://github.com/SRakshit-afk/Adventures-of-Pirate-Srijit.git
+
+cd Adventures-of-Pirate-Srijit
+
+# Compile
 javac AdventureGame/*.java
+
+# Run
 java AdventureGame.Main
 ```
 
-#### Option 2: Run from IDE
-- Open project folder in IntelliJ/VS Code
-- Run `AdventureGame.Main`
+---
+
+## Controls
+
+| Key | Action       |
+|-----|--------------|
+| W   | Move Up      |
+| A   | Move Left    |
+| S   | Move Down    |
+| D   | Move Right   |
 
 ---
 
-### 🌍 Generate a Map (Python)
+## Map Format & Python Tool
 
-1. Install dependencies:
-```bash
-pip install perlin-noise numpy
+### Map Format
+
+- Text-based (`map01.txt`) under `/res/maps/`
+- Each number represents a tile type:
+
+```
+0 0 0 1 1 1 0 0
+0 2 2 1 3 3 0 0
 ```
 
-2. Run the script:
-```bash
-cd map_generator/
-python generate_map.py
-```
+### Tile Legend
 
-3. Move the output `map.txt` to:
-```
-resources/maps/map01.txt
-```
+| Tile ID | Type   | Collision |
+|---------|--------|-----------|
+| 0       | Grass  | ❌        |
+| 1       | Wall   | ✅        |
+| 2       | Water  | ✅        |
+| 3       | Dirt   | ❌        |
+| 4       | Sand   | ❌        |
+| 5       | Tree   | ✅        |
+
+### Python Map Generator
+
+A custom Python tool (`map_generator.py`) is provided to auto-generate random or Perlin-style maps to speed up world creation.
 
 ---
 
-## 🧱 Collision System
+## Packaging Plans
 
-- Uses a rectangular `solidArea` on the player
-- `CollisionChecker` detects tile-based collisions
-- Any tile with `collision = true` is treated as an obstacle
+Currently, the game is distributed as a perosnal project as `.java` source code.
 
----
-
-
-## ✅ TODO / Ideas
-
-- [ ] Treasure chests and quest system
-- [ ] Menu, pause, and HUD
-- [ ] Save/load system
-- [ ] Audio support (BGM + SFX)
+✅ In future releases:
+- A `.jar` build will be included
+- A `.exe` file (using Launch4j or jpackage) will be provided for Windows users
 
 ---
 
+## 🧑‍💻 Author
 
-## 👨‍💻 Author
+**Srijit Rakshit**: Gamer, coder, and game dev enthusiast, Photographer
+GitHub: [@SRakshit-afk](https://github.com/SRakshit-afk)
 
-Developed by **Srijit**  
-Gamer, coder, and game dev enthusiast, Photographer
+---
