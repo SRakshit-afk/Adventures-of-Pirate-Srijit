@@ -148,6 +148,6 @@ Currently, the game is distributed as a perosnal project as `.java` source code.
 ## 🧑‍💻 Author
 
 **Srijit Rakshit**: Gamer, coder, and game dev enthusiast, Photographer
-GitHub: [@SRakshit-afk](https://github.com/SRakshit-afk)
+- GitHub: [@SRakshit-afk](https://github.com/SRakshit-afk)
 
 ---
