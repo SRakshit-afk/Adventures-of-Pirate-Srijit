@@ -14,7 +14,7 @@
 - [Installation](#installation)
 - [Controls](#controls)
 - [Map Format & Python Tool](#map-format--python-tool)
-- [Planned Features](#planned-features)
+- [Packaging Plans](#Packaging-Plans)
 
 ---
 
@@ -135,7 +135,7 @@ A custom Python tool (`map_generator.py`) is provided to auto-generate random or
 
 ## Packaging Plans
 
-Currently, the game is distributed as a perosnal project as `.java` source code.
+Currently, the game is distributed as a personal project as `.java` source code.
 
 ✅ In future releases:
 - A `.jar` build will be included
