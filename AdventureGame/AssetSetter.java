@@ -1,5 +1,6 @@
 package AdventureGame;
 
+import Objects.OBJ_BOOTS;
 import Objects.OBJ_CHEST;
 import Objects.OBJ_DOOR;
 import Objects.OBJ_KEY;
@@ -25,8 +26,8 @@ public class AssetSetter {
         gp.obj[2].worldY = 5 * gp.tileSize;
 
         gp.obj[3] = new OBJ_DOOR();
-        gp.obj[3].worldX =  34 * gp.tileSize;
-        gp.obj[3].worldY =  5 * gp.tileSize;
+        gp.obj[3].worldX =  36 * gp.tileSize;
+        gp.obj[3].worldY =  44 * gp.tileSize;
 
         gp.obj[4] = new OBJ_DOOR();
         gp.obj[4].worldX = 38 * gp.tileSize;
@@ -39,6 +40,10 @@ public class AssetSetter {
         gp.obj[6] = new OBJ_CHEST();
         gp.obj[6].worldX = 38 * gp.tileSize;
         gp.obj[6].worldY = 39 * gp.tileSize;
+
+        gp.obj[7] = new OBJ_BOOTS();
+        gp.obj[7].worldX = 48 * gp.tileSize;
+        gp.obj[7].worldY = 1 * gp.tileSize;
 
     }
 }
