@@ -14,7 +14,7 @@ public final class Player extends Entity {
 
     public final int screenX;
     public final int screenY;
-    int hasKey = 0;
+    public int hasKey = 0;
 
     public Player(GamePanel gp, KeyInput keyH){
         this.gp = gp;

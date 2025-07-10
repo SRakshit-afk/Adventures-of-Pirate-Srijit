@@ -15,8 +15,6 @@
 - [Controls](#controls)
 - [Map Format & Python Tool](#map-format--python-tool)
 - [Planned Features](#planned-features)
-- [Credits](#credits)
-- [License](#license)
 
 ---
 
