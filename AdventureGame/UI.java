@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.text.DecimalFormat;
 
 public class UI {
     GamePanel gp;
@@ -15,6 +16,9 @@ public class UI {
     public String message = "";
     int messageCounter = 0;
     public boolean gameFinished = false;
+
+    double playTime ;
+    DecimalFormat df = new DecimalFormat("#0.00");
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -45,6 +49,14 @@ public class UI {
             y = gp.screenHeight/2 - (gp.tileSize*3);
             g2.drawString(text, x, y);
 
+            g2.setFont(arial_30);
+            g2.setColor(Color.white);
+            text = "Your time is: " + df.format(playTime) + "s";
+            textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+            x = gp.screenWidth/2 - textLength/2;
+            y = gp.screenHeight/2 + (gp.tileSize*4);
+            g2.drawString(text, x, y);
+
             g2.setFont(broadway_40);
             g2.setColor(Color.white);
             text = "Congratulations";
@@ -61,6 +73,12 @@ public class UI {
             g2.setColor(Color.white);
             g2.drawImage(keyImage, gp.tileSize/2, gp.tileSize/2, gp.tileSize, gp.tileSize, null);
             g2.drawString("X " + gp.srijit.hasKey, 74, 62);
+
+            //Time 
+            g2.setFont(arial_30);
+            g2.setColor(Color.white);
+            playTime += (double)1/60;
+            g2.drawString("Time: " + df.format(playTime), gp.tileSize*12, 62);
 
             //Messages
             if(messageOn == true){
