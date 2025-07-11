@@ -9,12 +9,13 @@
 ## Table of Contents
 
 - [Features](#features)
+- [Game](#game)
 - [Screenshots](#screenshots)
 - [Game Structure](#game-structure)
 - [Installation](#installation)
 - [Controls](#controls)
 - [Map Format & Python Tool](#map-format--python-tool)
-- [Packaging Plans](#Packaging-Plans)
+- [Future Plans](#Future-Plans)
 
 ---
 
@@ -30,9 +31,16 @@
 
 ---
 
+## Game
+- Find the treasure hidden in the vast lands
+- Remember you need keys to open doors to the trasure chest
+- If you are lucky, you may find a special ability to your aid
+
+---
+
 ## Screenshots
 
-> Add gameplay GIF or screenshot here
+> This is how the Game v2.3 (In development version) looks [v2.3 = Release version 1.0.0]
 
 ![Gameplay Screenshots](/res/screenshots/ssInitial.png)
 ![Gameplay Screenshots](/res/screenshots/ssFinal.png)
@@ -45,7 +53,9 @@
 ```
 Adventures-of-Pirate-Srijit/
 │
+├── Run/                   # Contains the .exe and JRE folder
 ├── AdventureGame/         # Core game loop, main frame, input handling
+├── build/                 # Contains just the class files
 ├── entity/                # Player and entity management
 ├── tile/                  # Tile rendering and map loading
 ├── Objects/               # Object classes: keys, chests, doors
@@ -53,10 +63,13 @@ Adventures-of-Pirate-Srijit/
 │   ├── maps/
 │   ├── tiles/
 │   ├── objects/
+│   ├── screenshots/
 │   └── srijit/
 ├── map_generator.py       # Python tool to auto-generate map files
 ├── README.md
-└── Main.java
+├── Manifest.txt
+├── MyGame.jar
+└── Adventures Of Pirate Srijit.zip 
 ```
 
 ---
@@ -67,14 +80,15 @@ Adventures-of-Pirate-Srijit/
 
 - Java JDK 17+
 - A Java-compatible IDE (IntelliJ, VS Code, Eclipse) or command line
+- **Note**: As the code was developed in VS Code Editor .class files are also upload to git. Please use the .java files before recompiling
 
 ### Running the Game
 
-#### Method 1: From IDE
+#### Method 1: From Releases .zip
 
-1. Open project in IntelliJ or VS Code.
-2. Ensure `res/` is in classpath (as a resource folder).
-3. Run `Main.java`.
+1. Download the .zip from Releases
+2. Extract the zip files
+3. Run the .exe file
 
 #### Method 2: From Terminal
 
@@ -90,6 +104,11 @@ javac AdventureGame/*.java
 # Run
 java AdventureGame.Main
 ```
+#### Method 3: From IDE
+
+1. Open project in IntelliJ or VS Code.
+2. Ensure `res/` is in classpath (as a resource folder).
+3. Run `Main.java`.
 
 ---
 
@@ -106,7 +125,7 @@ java AdventureGame.Main
 
 ## Map Format & Python Tool
 
-### Map Format
+### Map Format 
 
 - Text-based (`map01.txt`) under `/res/maps/`
 - Each number represents a tile type:
@@ -127,7 +146,7 @@ java AdventureGame.Main
 | 4       | Sand   | ❌        |
 | 5       | Tree   | ✅        |
 
-### Python Map Generator
+### Python Map Generator (Optional)
 
 A custom Python tool (`map_generator.py`) is provided to auto-generate random or Perlin-style maps to speed up world creation.
 
@@ -135,17 +154,14 @@ A custom Python tool (`map_generator.py`) is provided to auto-generate random or
 
 ## Packaging Plans
 
-Currently, the game is distributed as a personal project as `.java` source code.
-
-✅ In future releases:
-- A `.jar` build will be included
-- A `.exe` file (using Launch4j or jpackage) will be provided for Windows users
+The game is a personal project for skill Development. It is released as an .exe file inside a .zip folder which contains /JRE (Official jdk files for java (Please use Java from Oracle Corporation for use), config.xml (From Launch4j), AdventuresOfPirateSrijit.exe
 
 ---
 
 ## 🧑‍💻 Author
 
-**Srijit Rakshit**: Gamer, coder, and game dev enthusiast, Photographer
+**Srijit Rakshit**: 
+> Gamer, coder, game dev enthusiast(and a hobby Photographer) 
 - GitHub: [@SRakshit-afk](https://github.com/SRakshit-afk)
 
 ---
