@@ -25,7 +25,7 @@
 - ✅ Real-time collision detection with walls, water, and trees
 - ✅ Key-door system with chest collection
 - ✅ External map support (`map01.txt`)
-- ✅ Python-based map auto-generator
+- ✅ Python-based map auto-generator (to generate new maps but code change required)
 - ✅ Modular structure for future expansions
 
 ---
@@ -34,8 +34,8 @@
 
 > Add gameplay GIF or screenshot here
 
-![Gameplay Screenshot](res/screenshots/sample.png)
-
+![Gameplay Screenshots](/res/screenshots/ssInitial.png)
+![Gameplay Screenshots](/res/screenshots/ssFinal.png)
 ---
 
 ## Game Structure
